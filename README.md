@@ -15,9 +15,9 @@ A **sync + async** client inspired by `blsR` for the [U.S. Bureau of Labor Stati
 
 Requires Python 3.11+:
 ```bash
-pip install blsapi
+pip install bls-api-client
 # or
-uv add blsapi
+uv add bls-api-client
 ```
 
 ```python

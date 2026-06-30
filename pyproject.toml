@@ -1,5 +1,5 @@
 [project]
-name = "blsapi"
+name = "bls-api-client"
 description = "A sync + async client for the BLS Public Data API"
 readme = "README.md"
 requires-python = ">=3.11"
