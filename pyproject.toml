@@ -1,0 +1,53 @@
+[project]
+name = "blsapi"
+description = "A sync + async client for the BLS Public Data API"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "covertcast", email = "covertcast@proton.me" }]
+keywords = [
+    "bls",
+    "bureau-of-labor-statistics",
+    "economics",
+    "labor-statistics",
+    "polars",
+    "api-client",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+dependencies = [
+    "httpx2>=2.4.0",
+    "polars>=1.42.0",
+    "pydantic>=2.13.4",
+    "anyio>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/covertcast/blsapi"
+Repository = "https://github.com/covertcast/blsapi"
+Issues = "https://github.com/covertcast/blsapi/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/blsapi/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blsapi"]
