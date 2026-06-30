@@ -14,7 +14,7 @@ DEFAULT_BASE_URL = "https://api.bls.gov/publicAPI/v2/"
 API_KEY_ENV_VAR = "BLS_API_KEY"
 
 # BLS asks clients to identify themselves.
-DEFAULT_USER_AGENT = f"blsapi/{__version__}"
+DEFAULT_USER_AGENT = f"bls-api-client/{__version__}"
 # Registration keys are 32 hex chars.
 EXPECTED_KEY_LENGTH = 32
 
