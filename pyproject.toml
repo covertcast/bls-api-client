@@ -38,9 +38,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/covertcast/blsapi"
-Repository = "https://github.com/covertcast/blsapi"
-Issues = "https://github.com/covertcast/blsapi/issues"
+Homepage = "https://github.com/covertcast/bls-api-client"
+Repository = "https://github.com/covertcast/bls-api-client"
+Issues = "https://github.com/covertcast/bls-api-client/issues"
 
 [build-system]
 requires = ["hatchling"]
