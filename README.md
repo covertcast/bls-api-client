@@ -1,7 +1,7 @@
 # blsapi
 
-[![PyPI version](https://img.shields.io/pypi/v/blsapi.svg)](https://pypi.org/project/bls-api-client/)
-[![Python versions](https://img.shields.io/pypi/pyversions/blsapi.svg)](https://pypi.org/project/bls-api-client/)
+[![PyPI version](https://img.shields.io/pypi/v/bls-api-client.svg)](https://pypi.org/project/bls-api-client/)
+[![Python versions](https://img.shields.io/pypi/pyversions/bls-api-client.svg)](https://pypi.org/project/bls-api-client/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A **sync + async** client inspired by `blsR` for the [U.S. Bureau of Labor Statistics
@@ -35,7 +35,7 @@ with BLSClient() as client:
 print(df)
 ```
 
-The result is a tidy/long DataFrame. Exporting elsewhere is
+The result is a Polars DataFrame. Exporting elsewhere is
 simple:
 
 ```python
@@ -61,7 +61,7 @@ anyio.run(main)
 
 ## Configuration
 
-Everything has a sensible default, so `blsapi` works out of the box.
+Everything has a sensible default, so `bls-api-client` works out of the box.
 
 ### API key
 
