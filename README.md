@@ -1,4 +1,4 @@
-# blsapi
+# bls-api-client
 
 [![PyPI version](https://img.shields.io/pypi/v/bls-api-client.svg)](https://pypi.org/project/bls-api-client/)
 [![Python versions](https://img.shields.io/pypi/pyversions/bls-api-client.svg)](https://pypi.org/project/bls-api-client/)
