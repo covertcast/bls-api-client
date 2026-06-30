@@ -74,11 +74,11 @@ A registration key is optional but raises your rate limits substantially. The ke
 ### Example:
 ```python
 # Explicit (highest precedence)
-client = BLSClient(api_key="your_32_char_key")
+client = BLSClient(api_key="API_KEY")
 
 # Or rely on the environment
-#   export BLS_API_KEY=your_32_char_key   (macOS/Linux)
-#   $env:BLS_API_KEY = "your_32_char_key" (PowerShell)
+#   export BLS_API_KEY=API_KEY   (macOS/Linux)
+#   $env:BLS_API_KEY = "API_KEY" (PowerShell)
 client = BLSClient()
 
 client.has_key  # returns True if a key is active
@@ -103,10 +103,10 @@ import httpx2
 from blsapi import BLSClient
 
 client = BLSClient(
-    api_key="…",
+    api_key="API_KEY",
     max_retries=5,
     timeout=httpx2.Timeout(connect=5.0, read=60.0, write=10.0, pool=5.0),
-    user_agent="my-app/1.0 (you@example.com)",
+    user_agent="app/1.0 (you@example.com)",
 )
 ```
 
@@ -122,7 +122,7 @@ df = client.get_series(
     start_year=2020,
     end_year=2024,
 )
-df["series_id"].unique().to_list()  # -> ["cpi", "unemployment"]
+df["series_id"].unique().to_list()  # ["cpi", "unemployment"]
 ```
 
 ### Wide format
@@ -143,24 +143,24 @@ wide = pivot_wide(df)  # columns: date, unemployment, cpi
 df = client.get_series(
     "LNS14000000", start_year=2023, end_year=2024, calculations=True
 )
-# adds net_change_{1,3,6,12}m and pct_change_{1,3,6,12}m columns
+# adds net_change_{1,3,6,12}m and pct_change_{1,3,6,12}m columns, as provided by the BLS API.
 
-resp = client.get_series_raw("LNS14000000", catalog=True)  # -> BLSResponse with catalog metadata
+resp = client.get_series_raw("LNS14000000", catalog=True)  # returns a BLSResponse with catalog metadata
 ```
 
 ### Surveys and popular series
 
 ```python
-client.list_surveys()        # -> DataFrame of all surveys
-client.get_survey("CU")      # -> dict of metadata for one survey
-client.get_popular()         # -> list of popular series ids
-client.get_popular("LN")     # -> popular ids within a survey
+client.list_surveys()        # returns a Polars DataFrame of all surveys
+client.get_survey("CU")      # returns a dict of metadata for one survey
+client.get_popular()         # returns list of popular series ids
+client.get_popular("LN")     # returns popular ids within a survey
 ```
 
 ### Quota planning
 
 ```python
-client.query_cost(["LNS14000000", "CUUR0000SA0"], 2000, 2024)  # -> number of API calls used
+client.query_cost(["LNS14000000", "CUUR0000SA0"], 2000, 2024)  # returns the number of API calls used
 ```
 
 ## Error handling
@@ -177,7 +177,7 @@ except BLSValidationError:
 except BLSAPIError as e:
     ...  # BLS returned a non-success status; inspect e.status and e.messages
 except BLSHTTPError:
-    ...  # transport/HTTP failure that survived the retry loop
+    ...  # transport/HTTP failure that persisted through the retry loop
 except BLSError:
     ...  # anything else from this library
 ```
