@@ -1,7 +1,7 @@
 # blsapi
 
-[![PyPI version](https://img.shields.io/pypi/v/blsapi.svg)](https://pypi.org/project/blsapi/)
-[![Python versions](https://img.shields.io/pypi/pyversions/blsapi.svg)](https://pypi.org/project/blsapi/)
+[![PyPI version](https://img.shields.io/pypi/v/blsapi.svg)](https://pypi.org/project/bls-api-client/)
+[![Python versions](https://img.shields.io/pypi/pyversions/blsapi.svg)](https://pypi.org/project/bls-api-client/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A **sync + async** client inspired by `blsR` for the [U.S. Bureau of Labor Statistics
